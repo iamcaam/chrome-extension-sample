@@ -1,0 +1,34 @@
+{
+    "manifest_version": 2,
+    "name": "My First Extension",
+    "version": "1.0.0",
+    "description": "This is  my first extension.",
+    "background": {
+    "scripts": [
+        "background.js"
+    ],
+    "persistent": false
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://*.youtube.com/*"],
+            "exclude_matches": ["https://*.youtube.com/watch*"],            
+            "js": [
+                "content.js"
+            ],
+            "run_at": "document_end" 
+            
+        }
+    ],    
+    "permissions": [
+        "bookmarks"
+    ],
+    "icons": {
+        "16": "Stormtrooper.png",
+        "48": "Stormtrooper.png",
+        "128": "Stormtrooper.png"
+    },
+    "browser_action": {
+        "default_title": "Create by William, enjoy!"
+    }
+}
